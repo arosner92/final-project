@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Iowa Housing Prices</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/superhero/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <link rel="stylesheet" href="static/css/style.css">
+</head>
+
+<body>
+<main role = "main" class = "container-fluid">
+  <div class="wrapper">
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="index.html">Home
+          </a>
+        </div>
+      </div>
+    </nav>
+	</div>
+	
+    <div class="hero text-center">
+      <h1>Ames, Iowa</h1>
+	  <h3>Can you afford a Home?</h3>
+	 </div>
+	<br>
+	<br>	
+	
+	
+
+
+	
+	
+	<div class="col-md-4"> 
+	<br>
+	<img src="https://cdn.thecrazytourist.com/wp-content/uploads/2017/11/ccimage-shutterstock_439326970.jpg" style="width:350px;height:260px;" alt="Ames, Iowa" >
+	
+	</div>
+	
+	<div class="col-md-4"> 
+	<br>
+	<img src="http://www.landsat.com/town-aerial-map/iowa/map/ames-ia-1901855.jpg" style="width:350px;height:260px;" alt="Ames Map">
+	
+	</div>
+	
+	<div class="alert alert-dismissible alert-warning">
+	  <button type="button" class="close" data-dismiss="alert">&times;</button>
+	  <strong>Ames, Iowa</strong>  <a href="#" class="alert-link">Ames is a city in Story County, Iowa, United States, located approximately 30 miles north of Des Moines in central Iowa. It is best known as the home of Iowa State University, with leading agriculture, design, engineering, and veterinary medicine colleges. A United States Department of Energy national laboratory, Ames Laboratory, is located on the ISU campus. Ames also hosts United States Department of Agriculture (USDA) sites: the largest federal animal disease center in the United States, USDA's Agricultural Research Service's National Animal Disease Center (NADC).</a>
+	 </div>
+
+	<div class="col-md-12"> 
+	
+	  
+		<h4>Would you like to buy a home in Ames, Iowa but not sure if you can afford it?</h4>
+		If so, you came to the right place.
+        Whether the home is new, old, large or small, has a pool or basement, we have you covered.
+        Fill in the form below in its entirety and we will “Predict” how much you will need to pay for your next home, here in Ames, Iowa.
+	<br>
+	<br>  
+	<br>
+	<br>
+	</div>
+
+	
+    <div class="container-fluid">
+      <div class="row margin-top-50">
+	  
+        <div class="col-md-6">
+		<form class="form-horizontal" action="{{ url_for('predict')}}"method="post">
+		<fieldset>
+
+				<label for="Total Area">Total Area (Square Feet)</label>
+				<br>
+				<input type="text" name="Total_Area" placeholder="Area" required="required" />
+				<br>
+				<br>
+				
+				<label for="House Square Footage">House Square Footage:</label>
+				<br>
+				<input type="text" name="House_Square_Footage" placeholder="House Sq Footage" required="required" />
+				<br>
+				<br>
+				
+				<label for="Remodeled"> Is this house remodeled? (1 = Yes , 0 = No) </label>
+				<br>
+				<input type="text" name="Is_ Remodeled" placeholder="Is Remodeled" required="required" />
+				<br>
+				<br>
+				
+				<label for="New">Is this house new? (1 = Yes , 0 = No) </label>
+				<br>
+				<input type="text" name="Is_New" placeholder="Is New" required="required" />
+				<br>
+				<br>
+				
+				<label for="Total Bedrooms">Total Bedrooms:</label>
+				<br>
+				<input type="text" name="Total_Bedrooms" placeholder="Total Bedrooms" required="required" />
+				<br>
+				<br>				
+				
+				<label for="Total Bathrooms">Total Bathrooms:</label>
+				<br>
+				<input type="text" name="Total_Bathrooms" placeholder="Total Bathrooms" required="required" />
+				<br>
+				<br>				
+				
+				<label for="Overall Condition">What is the overall condition? (1 = Worst , 10 = Best)</label>
+				<br>
+				<input type="text" name="Overall_Condition" placeholder="Overall Condition" required="required" />
+				<br>
+				<br>
+				
+				<label for="Exterior Condition">What is the exterior condition? (1 = Worst , 10 = Best)</label>
+				<br>
+				<input type="text" name="Exterior_Condition" placeholder="Exterior Condition" required="required" />
+				<br>
+				<br>
+
+				<label for="Basement">Does the house have a Basement?  (1 = Yes , 0 = No)</label>
+				<br>
+				<input type="text" name="Has_Basement" placeholder="Has Basement" required="required" />
+				<br>
+				<br>
+				
+				<label for="Garage">Does the house have a garage?  (1 = Yes , 0 = No)</label>
+				<br>
+				<input type="text" name="Has_Garage" placeholder="Has Garage" required="required" />				
+				<br>
+				<br>
+				
+				<label for="Porch">Does the house have a porch? (1 = Yes , 0 = No) </label>
+				<br>
+				<input type="text" name="Has_Porch" placeholder="Has Porch" required="required" /> 
+				<br>
+				<br>
+				
+				<label for="Pool">Does the house have a pool?  (1 = Yes , 0 = No)</label>
+				<br>
+				<input type="text" name="Has_Pool" placeholder="Has Pool" required="required" />
+				<br>
+				<br>
+				
+				<label for="Kitchen Quality">What is the kitchen quality? (1 = Worst , 5 = Best)</label>
+				<br>
+				<input type="text" name="Kitchen_Quality" placeholder="Kitchen Quality" required="required" />
+				<br>
+				<br>
+				
+				<label for="Fireplace Quality"> What is the fireplace quality? (1 = Worst , 5 = Best)</label>
+				<br>
+				<input type="text" name="Fireplace_Quality" placeholder="Fireplace Quality" required="required" />
+				<br>
+				<br>
+				
+				<label for="Garage Finish">Garage Finish ( 1 = Unfinished, 2 = Rough Finished, 3 = Finished)</label>
+				<br>
+				<input type="text" name="Garage_Finish" placeholder="Garage Finish" required="required" />
+				<br>
+				<br>
+			
+   
+				<label for="Basement Type">Basement Type (1 = Unfinshed:1, 2 = Below Average Living, 3 = No Info, 4 = Average Living, 5 = Rec Room, 6 = Low Quality, 7 = Good Living) </label>
+				<br>
+				<input type="text" name="Basement_Type" placeholder= "Basement Type" required="required" />
+				<br>
+				<br>
+				<br>
+
+				
+				<button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+				<br>
+			</form>
+			   
+			<br>
+
+			<br>
+			
+
+		</div>
+		
+		<div class="col-md-4">
+		<div class="alert alert-dismissible alert-warning">
+		{{ prediction_text }}
+		</div>
+		</div>
+</div>
+</div>
+
+</main>
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
+ 
+</body>
+
+</html>
